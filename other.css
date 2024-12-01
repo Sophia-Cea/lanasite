@@ -1,0 +1,51 @@
+.section1 {
+    height: auto;
+}
+
+.section1 h1 {
+    font-size: 2.5vw;
+    text-align: center;
+    margin: 10vw 0 1vw 0;
+}
+
+.section1 hr {
+    border: solid .2vw #463f3a;
+    border-radius: 1vw;
+    width: 30vw;
+    margin: 0 auto;
+}
+
+.section1 p {
+    margin: 3vw 15vw 8vw 15vw;
+    /* text-indent: 4vw; */
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+
+.section1 ul {
+    display: flex;
+    list-style-type:disc;
+    width: 20vw;
+    margin: auto;
+}
+
+.section1 li a {
+    margin: 0 2vw 0 0;
+    font-size: 1.3vw;
+    color: #463f3a;
+    text-decoration: none;
+
+}
+
+.section1 li a:hover {
+    text-decoration: underline;
+}
+
+
+.section2 iframe {
+    width: 35vw;
+    height: 40vw;
+    margin: 5vw 32.5vw;
+}
+

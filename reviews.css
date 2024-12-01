@@ -1,0 +1,89 @@
+.section1 {
+    display: flex;
+    background-color: #bcb8b1;
+    margin: 5vw;
+    color: #463f3a;
+    width: 80vw;
+    padding: 5vw;
+    margin: 5vw;
+}
+
+.section1 .left {
+    width: 50vw;
+    padding: 0 5vw 0 0;
+}
+
+.section1 .left h1 {
+    font-size: 2.5vw;
+    margin: 0 0 1vw 0;
+}
+
+.section1 .left p {
+    font-size: 1.5vw;
+    margin: 2vw 0 0 0;
+    text-indent: 3vw;
+}
+
+.section1 .left hr {
+    width: 10vw;
+    border: solid .2vw #463f3a;
+    border-radius: 1vw;
+    margin: 0 0 0 1vw;
+}
+
+.section1 .right {
+    width: 30vw;
+    background-image: url('images/sveta3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vw;
+    border: solid .5vw #463f3a;
+}
+
+
+
+.section1 .left ol {
+    display: flex;
+    list-style-type:disc;
+}
+
+.section1 .left li a {
+    margin: 0 2vw 0 0;
+    font-size: 1.3vw;
+    color: #463f3a;
+    text-decoration: none;
+
+}
+
+.section1 .left li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Section 2 */
+
+
+.section2 ul {
+    list-style-type: none;
+    font-size: 1.5vw;
+    margin: 5vw;
+}
+
+.section2 p {
+    margin: 1vw;
+    text-indent: 4vw;
+}
+
+.section2 .name {
+    font-size: 1vw;
+    /* text-indent: 4vw; */
+}
+
+.section2 li {
+    margin: 5vw 0;
+}
+
+.section2 .stars {
+    text-indent: 0;
+}

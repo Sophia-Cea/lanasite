@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reviews.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav>
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="other.html">More Info</a></li>
+        </ol>
+        <a class="logo" href="https://www.charlesrutenbergre.com/"></a>
+    </nav>
+
+    <section class="section1">
+        <div class="left">
+            <h1>See Why Our Clients Rate Us 5 Stars</h1>
+            <hr>
+            <p>Our commitment to exceptional service, personalized solutions, and unwavering support has earned us glowing reviews from satisfied clients. Explore firsthand accounts of how we’ve helped individuals and families navigate challenging situations and achieve their goals. Each 5-star review reflects the trust, dedication, and results that define our business.</p>
+            <ol>
+                <li id="fb"><a href="https://www.facebook.com/colelanarealtor/">facebook</a></li>
+                <li id="yt"><a href="https://www.youtube.com/@ColeSvetlanaRealtor">youtube</a></li>
+                <li id="ig"><a href="https://www.instagram.com/colelanarealtor/">instagram</a></li>
+            </ol>
+        </div>
+        <div class="right"></div>
+    </section>
+
+    <section class="section2">
+        <ul class="reviewsList">
+        </ul>
+    </section>
+
+   <script>
+        function Review(stars, content, name) {
+            this.stars = stars;
+            this.content = content;
+            this.name = name;
+        }
+        
+        const filePath = 'reviews.json';
+        let reviews = [];
+
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); 
+            })
+            .then(response => {
+                if (!Array.isArray(response)) {
+                    throw new Error("Invalid JSON structure: Root element is not an array.");
+                }
+                fillReviews(response);
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing the JSON file:', error.message);
+            });
+            
+            function fillReviews(reviews) {
+                reviews.forEach((review, index) => {
+                    reviews.push(new Review(review.stars, review.content, review.name));
+                });
+                const list = document.querySelector("ul");
+
+                reviews.forEach((review, index) => {
+                    const newListItem = document.createElement("li");
+
+                    const stars = document.createElement("p");
+                    stars.className = "stars";
+                    stars.textContent = "⭐️".repeat(parseInt(review.stars));
+
+                    const content = document.createElement("p");
+                    content.textContent = '"' + review.content + '"';
+
+                    const name = document.createElement("p");
+                    name.className = "name";
+                    name.textContent = "–" + review.name;
+
+                    newListItem.appendChild(stars);
+                    newListItem.appendChild(content);
+                    newListItem.appendChild(name);
+
+                    list.appendChild(newListItem);
+                });
+            }
+   </script>
+    
+  </body>
+
+  <footer>
+    <div class="footerContainer">
+        <div class="pages">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="other.html">More Info</a></li>
+            </ul>
+        </div>
+        <div class="info">
+            <h2>Contact me</h2>
+            <ul class="contact">
+                <li>Email: <a href="mailto: colelanarealtor@gmail.com">colelanarealtor@gmail.com</a></li>
+                <li>Phone: <a href="tel: 630-447-8382">630-447-8382</a></li>
+            </ul>
+            <h2>More From Me</h2>
+            <ul class="socials">
+                <li id="fb"><a href="https://www.facebook.com/colelanarealtor/">facebook</a></li>
+                <li id="yt"><a href="https://www.youtube.com/@ColeSvetlanaRealtor">youtube</a></li>
+                <li id="ig"><a href="https://www.instagram.com/colelanarealtor/">instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>©2024 Svetlana Cole</p>
+  </footer>
+
+</html>
