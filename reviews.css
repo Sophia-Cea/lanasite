@@ -44,7 +44,7 @@
 
 .section1 .left ol {
     display: flex;
-    list-style-type:disc;
+    list-style-type: none;
 }
 
 .section1 .left li a {

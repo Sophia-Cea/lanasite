@@ -26,6 +26,7 @@ nav ol {
 nav ol a {
     text-decoration: none;
     color: #f4f3ee;
+    text-shadow: 0 0 1vw #463f3a, 0 0 .5vw #463f3a;
 }
 
 nav ol li {
@@ -33,7 +34,7 @@ nav ol li {
     background-color: #bcb8b1;
     box-shadow: -.5vw .5vw 0 #e0afa0;
     padding: 1.5vw 3vw;
-    height: 2.5vw;
+    height: auto;
 }
 
 nav ol li:hover {
@@ -41,7 +42,6 @@ nav ol li:hover {
 }
 
 nav .logo {
-    float: right;
     background-color: #f4f3ee;
     background-image: url('images/logo.png');
     background-size: cover;
@@ -49,10 +49,39 @@ nav .logo {
     width: 9vw;
     height: 5vw;
     box-shadow: none;
-    margin: 2.5vw 0 0 37vw;
+    margin: 2.5vw 2vw 0 0vw;
+    position: absolute;
+    right: 0;
 }
 
 
+/* Social Media Icons */
+#fb {
+    background-image: url('images/fb.png');
+}
+
+#ig {
+    background-image: url('images/ig.png');
+}
+
+#yt {
+    background-image: url('images/yt.png');
+}
+
+.icon {
+    display: block;
+    margin: 0 2vw 0 0;
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10vw;
+}
+
+.icon:hover {
+    box-shadow: 0 0 2vw #463f3a, 0 0 1vw #463f3a;
+}
 
 /* Footer */
 
