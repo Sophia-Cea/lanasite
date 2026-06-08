@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "Lana Cole - Charles Rutenberg Realty of Illinois",
+            "telephone": "+1-630-447-8382",
+            "email": "colelanarealtor@gmail.com",
+            "url": "https://lanacole.net", 
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3135 Book Rd",
+                "addressLocality": "Naperville",
+                "addressRegion": "IL",
+                "postalCode": "60564",
+                "addressCountry": "US"
+            },
+            "areaServed": [
+                "Naperville",
+                "Downers Grove",
+                "Hinsdale"
+            ],
+            "sameAs": [
+                "https://www.facebook.com/colelanarealtor/",
+                "https://www.instagram.com/colelanarealtor/",
+                "https://www.youtube.com/@NapervilleRealtorLana"
+            ]
+        }
+    </script>
+
+</head>
+
+  <body>
+    <nav>
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="other.html">More Info</a></li>
+        </ol>
+        <a class="logo" href="https://www.charlesrutenbergre.com/"></a>
+    </nav>
+
+    <section class="headerSection">
+        <div class="left">
+            <h1>About Me</h1>
+            <p>
+                I'm Lana Cole, Full time real estate agent with over 20 years of experience in the Naperville area and surrounding communities. My mission is to help clients achieve their real estate goals, whether it's buying, selling, renting, or managing a property. With a deep understanding of the local market, I've successfully handled a wide range of real estate transactions, including short sales, foreclosures, REOs, and international properties. I'm committed to providing personalized service, open communication, and timely responses. Whether you're a first-time homebuyer or a seasoned investor, I'm here to guide you through the entire process. Let's work together to find your dream home or sell your property for top dollar.
+            </p>
+            <p>
+                If you're looking for an experienced agent to make your dream home sale or purchase smooth and pleasant, give me a call, <a href="tel:6304478382">630-447-8382</a>
+            </p>
+            <ul>
+                <li><a id="fb" class="icon" href="https://www.facebook.com/colelanarealtor/"></a></li>
+                <li><a id="yt" class="icon" href="https://www.youtube.com/@NapervilleRealtorLana"></a></li>
+                <li><a id="ig" class="icon" href="https://www.instagram.com/colelanarealtor/"></a></li>
+            </ul>
+        </div>
+        <div class="right"></div>
+    </section>
+
+    <section class="section3">
+            <h2>Personalized Plans for Optimal Results</h2>
+            <p>Whatever your goals, we will work with you to develop a customized plan that addresses your unique situation and ensures the best possible outcome.</p>
+            <br>
+
+            <h2>Dedicated Support and Privacy</h2>
+            <p>When you work with us, you benefit from our extensive knowledge, experience, full attention, and complete confidentiality. Your questions will always be addressed promptly. Most of the time, you can reach us directly on our cell phones. If we are in a meeting or on another call, we will return your inquiry as soon as possible.</p>
+        
+    </section>
+
+    <section class="section4">
+        <div class="content">
+            <h1>What You Can Expect from Us</h1>
+            <ul>
+                <li><strong>Expertise and Professionalism:</strong> Benefit from our extensive knowledge and commitment to excellence.</li>
+                <li><strong>Integrity and Privacy:</strong> We prioritize honesty, reliability, and the confidentiality of your personal information.</li>
+                <li><strong>Responsiveness and Results:</strong> Count on our availability, timely responses, and a dedication to achieving the best outcomes for you.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="blog" id="blog-container">
+        <h1 class="blogtitle"></h1>
+        
+    </section>
+
+    <script>
+        // Select the container where the posts will go
+        const container = document.getElementById('blog-container');
+
+        // Fetch the data from the external JSON file
+        fetch('blog.json')
+            .then(response => {
+                // Check if the file was found and loaded successfully
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // Parse the JSON data
+            })
+            .then(data => {
+                // Loop through the posts array inside the JSON data
+                data.posts.forEach(post => {
+                    // Create the wrapper div for each blog post
+                    const postDiv = document.createElement('div');
+                    postDiv.classList.add('blogpost');
+
+                    // Insert the HTML structure
+                    postDiv.innerHTML = `
+                        <h1 class="posttitle">${post.title}</h1>
+                        <p class="postdate">Date: ${post.date}</p>
+                        <p class="postcontent">${post.content}</p>
+                    `;
+
+                    // Append the newly created post to the container
+                    container.appendChild(postDiv);
+                });
+            })
+            .catch(error => {
+                // Handle any errors (like a missing file or syntax error in JSON)
+                console.error('There was a problem fetching the blog posts:', error);
+                container.innerHTML += `<p style="color: red; padding: 5vw;">Failed to load blog posts. Please try again later.</p>`;
+            });
+    </script>
+  </body>
+
+  <footer>
+    <div class="footerContainer">
+        <div class="pages">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="other.html">More Info</a></li>
+            </ul>
+        </div>
+        <div class="info">
+            <h2>Contact me</h2>
+            <ul class="contact">
+                <li>Email: <a href="mailto: cole.lana.realtor@gmail.com">cole.lana.realtor@gmail.com</a></li>
+                <li>Phone: <a href="tel: 630-903-4468">630-903-4468</a></li>
+            </ul>
+            <h2>More From Me</h2>
+            <ul class="socials">
+                <li id="fb"><a href="https://www.facebook.com/colelanarealtor/">facebook</a></li>
+                <li id="yt"><a href="https://www.youtube.com/@NapervilleRealtorLana">youtube</a></li>
+                <li id="ig"><a href="https://www.instagram.com/colelanarealtor/">instagram</a></li>
+                <li id="x"><a href="https://x.com/lanacole83611?s=11">X</a></li>
+                <li id="tt"><a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX">TikTok</a></li>
+                <li id="li"><a href="">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>
+        Lana Cole
+        <br>Licenced Real Estate Broker with Charles Rutenberg Realty of Illinois
+        <br>630-447-8382
+        <br>3135 Book Rd, Naperville, IL 60564
+        <br>"Equal Housing Opportunities"
+    </p>
+  </footer>
+
+</html>

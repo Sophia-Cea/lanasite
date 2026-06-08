@@ -1,0 +1,147 @@
+
+/* Section 1 */
+
+.headerSection {
+    height: auto;
+    display: flex;
+    width: 100vw;
+    margin-top: 0;
+}
+
+.headerSection .left {
+    width: 60vw;
+    padding: 5vw 5vw;
+}
+
+.headerSection h1 {
+    font-size: 2.5vw;
+}
+
+.headerSection p {
+    font-size: 1.5vw;
+    text-indent: 4vw;
+}
+
+.headerSection p a {
+    color:#463f3a;
+}
+
+.headerSection .right {
+    width: 30vw;
+    height: 35vw;
+    background-image: url('images/sveta.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5vw 10vw 5vw 0;
+    box-shadow: 1vw 1vw 0 #e0afa0;
+    border: solid .5vw #8a817c;
+}
+
+
+.headerSection .left ul {
+    display: flex;
+    list-style-type: none;
+}
+
+
+/* Section 3 */
+
+.section3 {
+    height: 30vw;
+    color: #f4f3ee;
+    margin: 10vh 0;
+}
+
+.section3 h1 {
+    font-size: 2.5vw;
+    margin: 0vh 0 1vh 5vw;
+}
+
+.section3 hr {
+    width: 20vw;
+    border: solid .3vw #e0afa0;
+    border-radius: 1vw;
+    margin: 0 0 0 5vw;
+}
+
+.section3 ul {
+    margin: 3vh 10vw 10vh 5vw;
+    font-size: 1.5vw;
+}
+
+.section3 h2 {
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 0;
+    color: #463f3a;
+}
+
+.section3 p {
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 1vw 15vw;
+    color: #463f3a
+}
+
+
+/* Section 4 */
+
+.section4 {
+    height: auto;
+    color: #463f3a;
+}
+
+.section4 .content {
+    height: 25vw;
+    width: 90vw;
+    margin: auto;
+    background-color: #bcb8b1;
+    padding: 3vw 0;
+}
+
+.section4 h1 {
+    text-align: center;
+    font-size: 3vw;
+}
+
+.section4 ul {
+    font-size: 1.5vw;
+    margin: 2vw 10vw 5vw 5vw;
+}
+
+
+
+/* blog */
+
+.blog {
+    height: auto;
+    width: 100vw;
+    margin-top: 0;
+}
+
+
+.blogtitle {
+    width: 60vw;
+    padding: 5vw 5vw;
+}
+
+.blogpost {
+    border: solid .1vw #bcb8b1;
+    margin: 5vw 10vw;
+    box-shadow: 0 0 1vw #bcb8b1;
+    padding: 3vw;
+}
+
+
+.posttitle {
+
+}
+
+.postcontent {
+
+}
+
+.postdate {
+
+}
