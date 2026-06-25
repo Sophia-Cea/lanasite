@@ -2,18 +2,23 @@
     "posts": [
         {
             "title": "Svetlana Cole's Blog",
-            "date": "2024-06-07",
+            "date": "2026-06-07",
             "content": "This is the content of my first blog post. I'm excited to share my thoughts and experiences with you!"
         },
         {
             "title": "Post 2",
-            "date": "2024-06-25",
+            "date": "2026-06-25",
             "content": "Post number two."
         },
         {
             "title": "Post 3",
-            "date": "2024-06-25",
+            "date": "2026-06-25",
             "content": "Post number three."
+        },
+        {
+            "title": "Post 4",
+            "date": "2026-06-25",
+            "content": "Post number four."
         }
     ]
 }
