@@ -1,20 +1,6 @@
 {
     "posts": [
         {
-            "title": "New Post with Photo",
-            "date": "2026-06-25",
-            "video": "",
-            "photo": "images/96d1fb5b_Screenshot 2026-06-25 at 12.56.55\u202fPM.png",
-            "content": "New post with a photo"
-        },
-        {
-            "title": "New Post ",
-            "date": "2026-06-25",
-            "video": "https://youtube.com/shorts/tZ5uhw7xvDQ?si=fNONh-1lye-3SSIM",
-            "photo": "",
-            "content": "New video post"
-        },
-        {
             "title": "Svetlana Cole's Blog",
             "date": "2026-25-07",
             "video": "https://youtube.com/shorts/KbOGINWpG7E?si=95FIt-jEiFW28v9u",
