@@ -10,15 +10,6 @@
             "date": "2026-06-25",
             "content": "Post number two."
         },
-        {
-            "title": "Post 3",
-            "date": "2026-06-25",
-            "content": "Post number three."
-        },
-        {
-            "title": "Post 4",
-            "date": "2026-06-25",
-            "content": "Post number four."
-        }
+        
     ]
 }
