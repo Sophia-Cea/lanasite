@@ -96,42 +96,63 @@
     </section>
 
     <script>
-        // Select the container where the posts will go
-        const container = document.getElementById('blog-container');
+    // Select the container where the posts will go
+    const container = document.getElementById('blog-container');
 
-        // Fetch the data from the external JSON file
-        fetch('blog.json')
-            .then(response => {
-                // Check if the file was found and loaded successfully
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json(); // Parse the JSON data
-            })
-            .then(data => {
-                // Loop through the posts array inside the JSON data
-                data.posts.forEach(post => {
-                    // Create the wrapper div for each blog post
-                    const postDiv = document.createElement('div');
-                    postDiv.classList.add('blogpost');
+    // Fetch the data from the external JSON file
+    fetch('blog.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('blogpost');
 
-                    // Insert the HTML structure
-                    postDiv.innerHTML = `
-                        <h1 class="posttitle">${post.title}</h1>
-                        <p class="postdate">Date: ${post.date}</p>
-                        <p class="postcontent">${post.content}</p>
+                // Logic to handle media elements conditionally
+                let mediaHtml = '';
+
+                if (post.video && post.video.trim() !== "") {
+                    // Convert standard YouTube or Shorts links to the correct embed format
+                    let embedUrl = post.video;
+                    if (embedUrl.includes('youtube.com/shorts/')) {
+                        embedUrl = embedUrl.replace('youtube.com/shorts/', 'youtube.com/embed/');
+                    } else if (embedUrl.includes('watch?v=')) {
+                        embedUrl = embedUrl.replace('watch?v=', 'embed/');
+                    }
+                    
+                    mediaHtml = `
+                        <div class="post-video" style="margin: 2vw 0;">
+                            <iframe width="100%" height="315" src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     `;
+                } else if (post.photo && post.photo.trim() !== "") {
+                    mediaHtml = `
+                        <div class="post-photo" style="margin: 2vw 0;">
+                            <img src="${post.photo}" alt="${post.title}" style="max-width: 100%; height: auto; display: block; border-radius: 4px;">
+                        </div>
+                    `;
+                }
 
-                    // Append the newly created post to the container
-                    container.appendChild(postDiv);
-                });
-            })
-            .catch(error => {
-                // Handle any errors (like a missing file or syntax error in JSON)
-                console.error('There was a problem fetching the blog posts:', error);
-                container.innerHTML += `<p style="color: red; padding: 5vw;">Failed to load blog posts. Please try again later.</p>`;
+                // Insert the complete HTML structure including the conditional media
+                postDiv.innerHTML = `
+                    <h1 class="posttitle">${post.title}</h1>
+                    <p class="postdate">Date: ${post.date}</p>
+                    ${mediaHtml}
+                    <p class="postcontent">${post.content}</p>
+                `;
+
+                container.appendChild(postDiv);
             });
-    </script>
+        })
+        .catch(error => {
+            console.error('There was a problem fetching the blog posts:', error);
+            container.innerHTML += `<p style="color: red; padding: 5vw;">Failed to load blog posts. Please try again later.</p>`;
+        });
+</script>
   </body>
 
   <footer>
