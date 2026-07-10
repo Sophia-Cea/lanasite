@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicagoland Realtor Lana Cole | Blog</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#1E40AF',
+                        brandPurple: '#6D28D9',
+                        brandDark: '#0F172A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-brandDark font-sans antialiased">
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" alt="Lana Cole Realtor" class="h-10 w-auto">
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-brandBlue transition">Home</a>
+                <a href="blog.html" class="text-brandBlue border-b-2 border-brandBlue pb-1">Blog</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brandBlue transition">Contact</a>
+            </nav>
+            <a href="contact.html" class="bg-gradient-to-r from-brandBlue to-brandPurple text-white px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                Work With Me
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. BLOG HERO BANNER -->
+    <section class="relative h-[45vh] flex items-center justify-center overflow-hidden mt-20">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/WNorthland-f.JPG');"></div>
+        <div class="absolute inset-0 bg-brandDark/75 backdrop-blur-[2px]"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-8">
+            <span class="text-brandPurple font-bold tracking-widest uppercase text-sm mb-3 block">Real Estate Insights</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                The Chicagoland <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Journal</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-300">Market updates, staging secrets, and community highlights to help you navigate your real estate journey.</p>
+        </div>
+    </section>
+
+    <!-- 3. MAIN BLOG CONTENT & SIDEBAR -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <!-- LEFT COLUMN: DYNAMIC ARTICLES LIST -->
+                <div id="articles-container" class="lg:w-2/3 flex flex-col gap-12">
+                    <!-- Dynamic content injected here from blog.json via script -->
+                    <div class="text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-spinner fa-spin text-2xl mb-2"></i>
+                        <p>Loading the latest articles...</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: SIDEBAR -->
+                <aside class="lg:w-1/3 space-y-8">
+                    <!-- Search Widget -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                        <form class="relative">
+                            <input type="text" placeholder="Search articles..." class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-4 pr-10 py-3 text-sm focus:outline-none focus:border-brandPurple transition">
+                            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brandPurple transition">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- About the Author Widget -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center">
+                        <img src="images/sveta2.jpg" alt="Lana Cole" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-gray-50 shadow-sm">
+                        <h3 class="font-bold text-xl text-brandDark mb-2">Lana Cole</h3>
+                        <p class="text-brandPurple text-xs uppercase tracking-widest font-semibold mb-4">Managing Broker</p>
+                        <p class="text-gray-600 text-sm mb-6">With 20 years of experience, I share my insider knowledge to help you buy, sell, and invest with complete confidence.</p>
+                        <a href="contact.html" class="inline-block border-2 border-brandDark text-brandDark px-6 py-2 rounded-full text-sm font-bold hover:bg-brandDark hover:text-white transition">Work With Me</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LEAD CAPTURE / CONTACT FORM -->
+    <section id="contact" class="py-20 bg-brandDark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brandBlue/20 to-brandPurple/20"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Ready to Start Your Next Chapter?</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-10">Whether you're exploring the market or ready to buy/sell today, drop a message below.</p>
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                <input type="text" name="name" placeholder="Your Name" required class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brandPurple transition">
+                <input type="email" name="email" placeholder="Email Address" required class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brandPurple transition">
+                <select name="inquiry_type" class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandPurple transition sm:col-span-2 appearance-none">
+                    <option value="buy" class="text-brandDark">I am looking to buy</option>
+                    <option value="sell" class="text-brandDark">I am looking to sell</option>
+                    <option value="general" class="text-brandDark">General inquiries / Media</option>
+                </select>
+                <div class="sm:col-span-2 flex items-start mt-2 mb-2">
+                    <div class="flex items-center h-5">
+                        <input id="consent" name="consent" type="checkbox" required class="w-5 h-5 rounded bg-white/10 border-white/20 text-brandPurple focus:ring-brandPurple focus:ring-2 focus:ring-offset-brandDark transition cursor-pointer accent-brandPurple">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="consent" class="font-medium text-gray-300 cursor-pointer">I consent to the collection of my details via this form.</label>
+                    </div>
+                </div>
+                <button type="submit" class="sm:col-span-2 w-full bg-gradient-to-r from-brandBlue to-brandPurple text-white font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition tracking-wide uppercase mt-2">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+     <!-- 7. FOOTER SECTION -->
+    <footer class="bg-brandDark text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <img src="images/logo.png" alt="Lana Cole Realtor" class="h-12 w-auto mb-4">
+                    <p class="text-sm text-gray-400">
+                        Lana Cole
+                        <br>Licenced Real Estate Broker with Charles Rutenberg Realty of Illinois
+                        <br>630-903-4468
+                        <br>3135 Book Rd, Naperville, IL 60564
+                        <br>"Equal Housing Opportunities"
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-brandPurple transition">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-brandPurple transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-brandPurple transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Let's Connect</h3>
+                    <p class="text-sm text-gray-400 mb-6">Ready to discuss your real estate goals? Let's start the conversation today.</p>
+                    <a href="contact.html" class="inline-block bg-gradient-to-r from-brandBlue to-brandPurple text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition">
+                        SCHEDULE CONSULTATION
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Lana Cole Realtor. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Website by <a href="https://csophia.com" target="_blank" class="text-white hover:text-brandPurple transition font-medium underline underline-offset-4">Sophia Cole</a></p>
+
+                <div class="flex space-x-6 text-lg mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/colelanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX" class="hover:text-brandBlue transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@NapervilleRealtorLana" class="hover:text-brandBlue transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/colesvetlanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/lanacole83611?s=11" class="hover:text-brandBlue transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC BLOG POSTS LOADER -->
+    <script>
+        // Converts "shorts/abc" link variations into clean standard format links
+        function getEmbedUrl(urlStr) {
+            if (!urlStr) return '';
+            if (urlStr.includes('youtube.com/shorts/')) {
+                const parts = urlStr.split('youtube.com/shorts/');
+                const id = parts[1].split('?')[0];
+                return `https://www.youtube.com/embed/${id}`;
+            }
+            return urlStr;
+        }
+
+        // Fetch local JSON dynamic parsing content logic
+        fetch('blog.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('articles-container');
+                container.innerHTML = ''; // Clean layout status
+
+                data.posts.forEach((post, index) => {
+                    // Truncating paragraph string safely for preview text card summary layout
+                    let previewText = post.content.replace(/<br>/g, ' ');
+                    if (previewText.length > 140) {
+                        previewText = previewText.substring(0, 137) + '...';
+                    }
+
+                    // Automatic fallback category logic helper text tag
+                    const category = post.video ? "Video Insight" : "Market Guide";
+
+                    // Determine standard image tag or clean embed setup block
+                    let mediaMarkup = '';
+                    if (post.video) {
+                        const cleanEmbed = getEmbedUrl(post.video);
+                        mediaMarkup = `
+                            <div class="md:w-2/5 relative rounded-2xl overflow-hidden bg-gray-100 order-1 md:order-2 shadow-inner aspect-[3/4] md:aspect-auto">
+                                <iframe class="absolute inset-0 w-full h-full" src="${cleanEmbed}" title="${post.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        `;
+                    } else {
+                        mediaMarkup = `
+                            <div class="md:w-2/5 relative rounded-2xl overflow-hidden order-1 md:order-2 shadow-inner min-h-[250px] aspect-[4/3] md:aspect-auto">
+                                <img src="${post.photo || 'images/logo.png'}" alt="${post.title}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            </div>
+                        `;
+                    }
+
+                    // Build and attach element cards block onto template 
+                    const articleHTML = `
+                        <article class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 group hover:shadow-lg transition duration-300">
+                            <div class="md:w-3/5 flex flex-col justify-center order-2 md:order-1">
+                                <div class="flex items-center text-xs text-gray-400 mb-4 space-x-3 uppercase font-semibold tracking-wider">
+                                    <span class="text-brandPurple">${category}</span>
+                                    <span>•</span>
+                                    <span>${post.date}</span>
+                                </div>
+                                <h2 class="font-bold text-2xl sm:text-3xl text-brandDark mb-4 group-hover:text-brandBlue transition">
+                                    <a href="blogpage.html?id=${index}">${post.title}</a>
+                                </h2>
+                                <p class="text-gray-600 text-base leading-relaxed mb-6">${previewText}</p>
+                                <a href="blogpage.html?id=${index}" class="inline-flex items-center text-brandPurple font-semibold hover:text-brandBlue transition group-hover:translate-x-1">
+                                    Read Full Article <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                            ${mediaMarkup}
+                        </article>
+                    `;
+                    container.innerHTML += articleHTML;
+                });
+            })
+            .catch(err => {
+                console.error("Error pulling database items:", err);
+                document.getElementById('articles-container').innerHTML = `
+                    <p class="text-red-500 font-semibold text-center py-8">Failed to load content. Please refresh the page.</p>
+                `;
+            });
+    </script>
+</body>
+</html>

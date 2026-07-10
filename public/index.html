@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicagoland Realtor Lana Cole | Home</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#1E40AF',
+                        brandPurple: '#6D28D9',
+                        brandDark: '#0F172A'
+                    }
+                }
+            }
+        }
+    </script>
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -37,157 +50,412 @@
             ]
         }
     </script>
-
+    <style>
+        /* Custom class to hide the scrollbar for the carousel but keep functionality */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
+<body class="bg-white text-brandDark font-sans antialiased">
 
-  <body>
-    <nav>
-        <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="other.html">More Info</a></li>
-        </ol>
-        <a class="logo" href="https://www.charlesrutenbergre.com/"></a>
-    </nav>
+    <!-- 1. NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" alt="Lana Cole Realtor" class="h-10 w-auto">
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="text-brandBlue border-b-2 border-brandBlue pb-1">Home</a>
+                <a href="blog.html" class="text-gray-600 hover:text-brandBlue transition">Blog</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brandBlue transition">Contact</a>
+            </nav>
+            <a href="contact.html" class="bg-gradient-to-r from-brandBlue to-brandPurple text-white px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                Work With Me
+            </a>
+        </div>
+    </header>
 
-    <section class="headerSection">
-        <div class="left">
-            <h1>About Me</h1>
-            <p>
-                I'm Lana Cole, Full time real estate agent with over 20 years of experience in the Naperville area and surrounding communities. My mission is to help clients achieve their real estate goals, whether it's buying, selling, renting, or managing a property. With a deep understanding of the local market, I've successfully handled a wide range of real estate transactions, including short sales, foreclosures, REOs, and international properties. I'm committed to providing personalized service, open communication, and timely responses. Whether you're a first-time homebuyer or a seasoned investor, I'm here to guide you through the entire process. Let's work together to find your dream home or sell your property for top dollar.
-            </p>
+    <!-- 2. HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 standard-slideshow-mock" style="background-image: url('images/WNorthland-f.JPG');"></div>
+        <div class="absolute inset-0 bg-brandDark/60 backdrop-blur-[2px]"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 text-white text-center lg:text-left">
+                    <span class="inline-block bg-brandPurple/30 text-purple-300 border border-brandPurple/50 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase mb-4">
+                        Your Trusted Chicago Suburbs Expert
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-6">
+                        Guiding You to the Place You'll Call <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Home</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl">
+                        Hi, I’m Lana. With 20 years of real estate experience in Illinois, I will help you with all your real estate needs. Whether it's closing on your dream home or selling your home for the best price, I'm your expert to call.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="blog.html" class="bg-brandBlue hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition text-center">
+                            Read the Journal
+                        </a>
+                        <a href="contact.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur px-8 py-4 rounded-xl font-semibold transition text-center">
+                            Book a Consultation
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 group">
+                        <img src="images/sveta2.jpg" alt="Sarah, Realtor" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brandDark/90 to-transparent p-6 text-center">
+                            <p class="text-white font-bold text-xl">Svetlana Cole</p>
+                            <p class="text-purple-300 text-sm">Managing Broker & Advisor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. DYNAMIC BLOG POST SECTION -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandBlue font-bold text-sm uppercase tracking-wider block mb-2">Real Estate Insights</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brandDark tracking-tight">From the Blog</h2>
+                <p class="text-gray-500 mt-3 text-lg">Stay updated with actionable strategies, staging guides, and local neighborhood analysis.</p>
+            </div>
+
+            <!-- Dynamic Target Container -->
+            <div id="dynamic-recent-posts" class="flex flex-col gap-12">
+                <div class="text-center py-12 text-gray-400">
+                    <i class="fa-solid fa-spinner fa-spin text-2xl mb-2"></i>
+                    <p>Fetching latest articles...</p>
+                </div>
+            </div>
             
-            <p>
-                If you're looking for an experienced agent to make your dream home sale or purchase smooth and pleasant, give me a call, <a href="tel:6309034468">630-903-4468</a>
-            </p>
-            <ul>
-                <li><a id="fb" class="icon" href="https://www.facebook.com/colelanarealtor/"></a></li>
-                <li><a id="yt" class="icon" href="https://www.youtube.com/@NapervilleRealtorLana"></a></li>
-                <li><a id="ig" class="icon" href="https://www.instagram.com/colelanarealtor/"></a></li>
-            </ul>
-        </div>
-        <div class="right"></div>
-    </section>
-
-    <section class="section3">
-            <h2>Personalized Plans for Optimal Results</h2>
-            <p>Whatever your goals, we will work with you to develop a customized plan that addresses your unique situation and ensures the best possible outcome.</p>
-            <br>
-
-            <h2>Dedicated Support and Privacy</h2>
-            <p>When you work with us, you benefit from our extensive knowledge, experience, full attention, and complete confidentiality. Your questions will always be addressed promptly. Most of the time, you can reach us directly on our cell phones. If we are in a meeting or on another call, we will return your inquiry as soon as possible.</p>
-        
-    </section>
-
-    <section class="section4">
-        <div class="content">
-            <h1>What You Can Expect from Us</h1>
-            <ul>
-                <li><strong>Expertise and Professionalism:</strong> Benefit from our extensive knowledge and commitment to excellence.</li>
-                <li><strong>Integrity and Privacy:</strong> We prioritize honesty, reliability, and the confidentiality of your personal information.</li>
-                <li><strong>Responsiveness and Results:</strong> Count on our availability, timely responses, and a dedication to achieving the best outcomes for you.</li>
-            </ul>
+            <div class="text-center mt-12">
+                <a href="blog.html" class="inline-flex items-center bg-brandDark text-white px-8 py-3.5 rounded-xl font-bold shadow-md hover:bg-brandBlue transition">
+                    View All Articles <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section class="blog" id="blog-container">
-        <h1 class="blogtitle"></h1>
-        
-    </section>
+    <!-- 4. CLIENT REVIEWS SECTION (Carousel) -->
+    <section class="py-24 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brandDark tracking-tight">Client Testimonials</h2>
+            </div>
 
-    <script>
-    // Select the container where the posts will go
-    const container = document.getElementById('blog-container');
+            <!-- Carousel Container -->
+            <div class="relative">
+                
+                <!-- Left Navigation Button -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 items-center justify-center text-brandDark hover:text-brandBlue focus:outline-none hidden md:flex -ml-4 lg:-ml-6 transition-transform transform hover:scale-110">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-    // Fetch the data from the external JSON file
-    fetch('blog.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            data.posts.forEach(post => {
-                const postDiv = document.createElement('div');
-                postDiv.classList.add('blogpost');
-
-                // Logic to handle media elements conditionally
-                let mediaHtml = '';
-
-                if (post.video && post.video.trim() !== "") {
-                    // Convert standard YouTube or Shorts links to the correct embed format
-                    let embedUrl = post.video;
-                    if (embedUrl.includes('youtube.com/shorts/')) {
-                        embedUrl = embedUrl.replace('youtube.com/shorts/', 'youtube.com/embed/');
-                    } else if (embedUrl.includes('watch?v=')) {
-                        embedUrl = embedUrl.replace('watch?v=', 'embed/');
-                    }
+                <!-- Reviews Track -->
+                <div id="review-track" class="flex overflow-x-auto snap-x snap-mandatory hide-scroll gap-8 pb-8 pt-4 px-2">
                     
-                    mediaHtml = `
-                        <div class="post-video" style="margin: 2vw 0;">
-                            <iframe width="100%" height="315" src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- Review 1 -->
+                    <div class="snap-center shrink-0 w-[90%] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow hover:shadow-md">
+                        <div>
+                            <div class="text-yellow-400 mb-4 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-sm">"Lana was wonderful to work with. She came to our home and we discussed listing price and how to stage the home for pictures. Lana made great recommendations, and due to her recommendations and commitment, our home went under contract within five days of its being listed. We received a few offers, Lana walked us through the pros and cons of each offer. Lana was always available and extremely helpful when questions would arise. Lana shows that she is very knowledgeable about the real estate market and how it changes. I would highly recommend Lana for your buying and selling needs. Carrie & Steve"</p>
                         </div>
-                    `;
-                } else if (post.photo && post.photo.trim() !== "") {
-                    mediaHtml = `
-                        <div class="post-photo" style="margin: 2vw 0;">
-                            <img src="${post.photo}" alt="${post.title}" style="max-width: 100%; height: auto; display: block; border-radius: 4px;">
+                        <div class="flex items-center mt-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-brandBlue mr-3">SM</div>
+                            <p class="font-bold text-brandDark">Steven Marszalek</p>
                         </div>
-                    `;
-                }
+                    </div>
 
-                // Insert the complete HTML structure including the conditional media
-                postDiv.innerHTML = `
-                    <h1 class="posttitle">${post.title}</h1>
-                    <p class="postdate">Date: ${post.date}</p>
-                    ${mediaHtml}
-                    <p class="postcontent">${post.content}</p>
-                `;
+                    <!-- Review 2 -->
+                    <div class="snap-center shrink-0 w-[90%] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow hover:shadow-md">
+                        <div>
+                            <div class="text-yellow-400 mb-4 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-sm">"Throughout my home selling process, Lana was incredibly communicative. She quickly answered calls, text messages, and emails, keeping me informed about every aspect of the process. Lana’s expertise in the real estate industry are evident - her efficiency led to a quick sale. Her dedication in helping me sell was remarkable!"</p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center font-bold text-brandPurple mr-3">EG</div>
+                            <p class="font-bold text-brandDark">Elisa Gomez</p>
+                        </div>
+                    </div>
 
-                container.appendChild(postDiv);
+                    <!-- Review 3 -->
+                    <div class="snap-center shrink-0 w-[90%] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow hover:shadow-md">
+                        <div>
+                            <div class="text-yellow-400 mb-4 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-sm">"Lana is an exceptional realtor who provided us with invaluable assistance throughout the home-buying process. As first-time homebuyers, we were initially unfamiliar with the intricacies involved, but Lana patiently explained every detail and guided us through it easily. She has a keen sense of our unspoken needs and style preferences, and this enabled her to provide us with suitable options that met our expectations. Additionally, Lana's quick understanding of our preferences made the home-touring process seamless and enjoyable. We were impressed with her professionalism and attention to detail, and we would highly recommend her services to anyone looking to buy a home."</p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-brandBlue mr-3">RS</div>
+                            <p class="font-bold text-brandDark">Rafael Seidalinov</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="snap-center shrink-0 w-[90%] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow hover:shadow-md">
+                        <div>
+                            <div class="text-yellow-400 mb-4 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-sm">"Lana is super helpful, knowledgeable, and she truly cares and wants the best for her clients. She responds quickly and is on top of the market. I recommend her to anybody looking to buy or rent without hesitation."</p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center font-bold text-brandPurple mr-3">RC</div>
+                            <p class="font-bold text-brandDark">Rina Coladilla</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Right Navigation Button -->
+                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 items-center justify-center text-brandDark hover:text-brandBlue focus:outline-none hidden md:flex -mr-4 lg:-mr-6 transition-transform transform hover:scale-110">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MEET THE REALTOR -->
+    <section class="py-20 bg-gradient-to-br from-brandBlue/5 to-brandPurple/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-6">
+                    <span class="text-brandPurple font-bold text-sm uppercase tracking-wider block mb-2">Meet the Realtor</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brandDark mb-6 tracking-tight">20 Years of Experience and Counting</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        I'm Lana Cole, Full time real estate agent with over 20 years of experience in the Naperville area and surrounding communities. My mission is to help clients achieve their real estate goals, whether it's buying, selling, renting, or managing a property. With a deep understanding of the local market, I've successfully handled a wide range of real estate transactions, including short sales, foreclosures, REOs, and international properties. I'm committed to providing personalized service, open communication, and timely responses. Whether you're a first-time homebuyer or a seasoned investor, I'm here to guide you through the entire process. Let's work together to find your dream home or sell your property for top dollar.
+                        <br><br>If you're looking for an experienced agent to make your dream home sale or purchase smooth and pleasant, give me a call, 630-903-4468
+                    </p>
+
+                    <!-- Added Social Media Links -->
+                    <div class="flex space-x-6 text-2xl mt-8 text-brandDark">
+                        <a href="https://www.instagram.com/colelanarealtor/" class="hover:text-brandPurple transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX" class="hover:text-brandPurple transition transform hover:scale-110"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@NapervilleRealtorLana" class="hover:text-brandPurple transition transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/colesvetlanarealtor/" class="hover:text-brandPurple transition transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/lanacole83611?s=11" class="hover:text-brandPurple transition transform hover:scale-110"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Playable YouTube Short -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="relative w-full max-w-sm aspect-[9/16] rounded-3xl bg-brandDark overflow-hidden shadow-2xl border-8 border-brandDark">
+                        <iframe 
+                            class="absolute inset-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/DN78YXDxxGQ" 
+                            title="Meet the Realtor" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LEAD CAPTURE / CONTACT FORM -->
+    <section id="contact" class="py-20 bg-brandDark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brandBlue/20 to-brandPurple/20"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Ready to Start Your Next Chapter?</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-10">Whether you're exploring the market or ready to buy/sell today, drop a message below. I am ready to secure your competitive edge.</p>
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                <input type="text" name="name" placeholder="Your Name" required class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brandPurple transition">
+                <input type="email" name="email" placeholder="Email Address" required class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-brandPurple transition">
+                <select name="inquiry_type" class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandPurple transition sm:col-span-2 appearance-none">
+                    <option value="buy" class="text-brandDark">I am looking to buy</option>
+                    <option value="sell" class="text-brandDark">I am looking to sell</option>
+                    <option value="general" class="text-brandDark">General inquiries / Media</option>
+                </select>
+
+                <div class="sm:col-span-2 flex items-start mt-2 mb-2">
+                    <div class="flex items-center h-5">
+                        <input id="consent" name="consent" type="checkbox" required class="w-5 h-5 rounded bg-white/10 border-white/20 text-brandPurple focus:ring-brandPurple focus:ring-2 focus:ring-offset-brandDark transition cursor-pointer accent-brandPurple">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="consent" class="font-medium text-gray-300 cursor-pointer">
+                            I consent to the collection of my details via this form so that Lana Cole can respond to my inquiry.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="sm:col-span-2 w-full bg-gradient-to-r from-brandBlue to-brandPurple text-white font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition tracking-wide uppercase mt-2">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER SECTION -->
+    <footer class="bg-brandDark text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <img src="images/logo.png" alt="Lana Cole Realtor" class="h-12 w-auto mb-4">
+                    <p class="text-sm text-gray-400">
+                        Lana Cole
+                        <br>Licenced Real Estate Broker with Charles Rutenberg Realty of Illinois
+                        <br>630-903-4468
+                        <br>3135 Book Rd, Naperville, IL 60564
+                        <br>"Equal Housing Opportunities"
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-brandPurple transition">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-brandPurple transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-brandPurple transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Let's Connect</h3>
+                    <p class="text-sm text-gray-400 mb-6">Ready to discuss your real estate goals? Let's start the conversation today.</p>
+                    <a href="contact.html" class="inline-block bg-gradient-to-r from-brandBlue to-brandPurple text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition">
+                        SCHEDULE CONSULTATION
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Lana Cole Realtor. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Website by <a href="https://csophia.com" target="_blank" class="text-white hover:text-brandPurple transition font-medium underline underline-offset-4">Sophia Cole</a></p>
+
+                <div class="flex space-x-6 text-lg mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/colelanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX" class="hover:text-brandBlue transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@NapervilleRealtorLana" class="hover:text-brandBlue transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/colesvetlanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/lanacole83611?s=11" class="hover:text-brandBlue transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carousel & Dynamic Posts Parser Logic -->
+    <script>
+        // Utility translation converter mapping for video streaming
+        function getEmbedUrl(urlStr) {
+            if (!urlStr) return '';
+            if (urlStr.includes('youtube.com/shorts/')) {
+                const parts = urlStr.split('youtube.com/shorts/');
+                const id = parts[1].split('?')[0];
+                return `https://www.youtube.com/embed/${id}`;
+            }
+            return urlStr;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- CAROUSEL LOGIC ---
+            const track = document.getElementById('review-track');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            const getScrollAmount = () => {
+                const firstCard = track.querySelector('div');
+                if (!firstCard) return 0;
+                return firstCard.offsetWidth + 32; // card width + gap-8 (32px)
+            };
+
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
             });
-        })
-        .catch(error => {
-            console.error('There was a problem fetching the blog posts:', error);
-            container.innerHTML += `<p style="color: red; padding: 5vw;">Failed to load blog posts. Please try again later.</p>`;
+
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            let autoScroll = setInterval(() => {
+                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+            }, 3000);
+
+            track.addEventListener('mouseenter', () => clearInterval(autoScroll));
+            track.addEventListener('mouseleave', () => {
+                autoScroll = setInterval(() => {
+                    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                    }
+                }, 3000);
+            });
+
+            // --- DYNAMIC RECENT POSTS FETCH ---
+            fetch('blog.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('dynamic-recent-posts');
+                    container.innerHTML = ''; // Clear loading spinner
+
+                    // Slice out only the 3 most recent posts from the data feed array
+                    const recentPosts = data.posts.slice(0, 3);
+
+                    recentPosts.forEach((post, index) => {
+                        // Strip out <br> tags safely to create a clean preview string
+                        let previewText = post.content.replace(/<br>/g, ' ');
+                        if (previewText.length > 160) {
+                            previewText = previewText.substring(0, 157) + '...';
+                        }
+
+                        let mediaSection = '';
+                        if (post.video) {
+                            mediaSection = `
+                                <div class="md:w-1/2 relative bg-gray-100 min-h-[350px]">
+                                    <iframe class="absolute inset-0 w-full h-full" src="${getEmbedUrl(post.video)}" title="${post.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            `;
+                        } else {
+                            mediaSection = `
+                                <div class="md:w-1/2 relative min-h-[350px] overflow-hidden">
+                                    <img src="${post.photo || 'images/logo.png'}" alt="${post.title}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                </div>
+                            `;
+                        }
+
+                        const cardMarkup = `
+                            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row group hover:shadow-lg transition">
+                                <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                                    <span class="text-brandPurple font-semibold text-sm tracking-wider uppercase mb-2">${post.date}</span>
+                                    <h3 class="font-bold text-2xl text-brandDark mb-4 hover:text-brandBlue transition">
+                                        <a href="blogpage.html?id=${index}">${post.title}</a>
+                                    </h3>
+                                    <p class="text-gray-600 text-base mb-6 leading-relaxed">${previewText}</p>
+                                    <a href="blogpage.html?id=${index}" class="text-brandBlue font-semibold inline-flex items-center hover:text-brandPurple transition">
+                                        Read More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                                ${mediaSection}
+                            </article>
+                        `;
+                        container.innerHTML += cardMarkup;
+                    });
+                })
+                .catch(err => {
+                    console.error("Error updating home posts context layout:", err);
+                    document.getElementById('dynamic-recent-posts').innerHTML = `
+                        <p class="text-center text-gray-500 py-6">Could not load preview articles. Visit the Blog page to read content.</p>
+                    `;
+                });
         });
-</script>
-  </body>
-
-  <footer>
-    <div class="footerContainer">
-        <div class="pages">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="other.html">More Info</a></li>
-            </ul>
-        </div>
-        <div class="info">
-            <h2>Contact me</h2>
-            <ul class="contact">
-                <li>Email: <a href="mailto: cole.lana.realtor@gmail.com">cole.lana.realtor@gmail.com</a></li>
-                <li>Phone: <a href="tel: 630-903-4468">630-903-4468</a></li>
-            </ul>
-            <h2>More From Me</h2>
-            <ul class="socials">
-                <li id="fb"><a href="https://www.facebook.com/colelanarealtor/">facebook</a></li>
-                <li id="yt"><a href="https://www.youtube.com/@NapervilleRealtorLana">youtube</a></li>
-                <li id="ig"><a href="https://www.instagram.com/colelanarealtor/">instagram</a></li>
-                <li id="x"><a href="https://x.com/lanacole83611?s=11">X</a></li>
-                <li id="tt"><a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX">TikTok</a></li>
-                <li id="li"><a href="">LinkedIn</a></li>
-            </ul>
-        </div>
-    </div>
-    <p>
-        Lana Cole
-        <br>Licenced Real Estate Broker with Charles Rutenberg Realty of Illinois
-        <br>630-447-8382
-        <br>3135 Book Rd, Naperville, IL 60564
-        <br>"Equal Housing Opportunities"
-    </p>
-  </footer>
-
+    </script>
+</body>
 </html>

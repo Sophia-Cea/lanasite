@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Chicagoland Realtor Lana Cole</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#1E40AF',
+                        brandPurple: '#6D28D9',
+                        brandDark: '#0F172A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-brandDark font-sans antialiased">
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" alt="Lana Cole Realtor" class="h-10 w-auto">
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-brandBlue transition">Home</a>
+                <a href="blog.html" class="text-brandBlue border-b-2 border-brandBlue pb-1">Blog</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brandBlue transition">Contact</a>
+            </nav>
+            <a href="contact.html" class="bg-gradient-to-r from-brandBlue to-brandPurple text-white px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                Work With Me
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. ARTICLE LAYOUT CONTENT -->
+    <main class="pt-32 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Back button -->
+        <a href="blog.html" class="inline-flex items-center text-sm font-semibold text-brandPurple hover:text-brandBlue transition mb-8 group">
+            <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition"></i> Back to All Articles
+        </a>
+
+        <article id="full-post" class="bg-white p-6 sm:p-12 rounded-3xl shadow-sm border border-gray-100">
+            <!-- Dynamic Category and Date Header -->
+            <div class="flex items-center text-xs text-gray-400 mb-4 space-x-3 uppercase font-semibold tracking-wider">
+                <span id="post-category" class="text-brandPurple">Insights</span>
+                <span>•</span>
+                <span id="post-date">Loading Date...</span>
+            </div>
+
+            <!-- Dynamic Post Title -->
+            <h1 id="post-title" class="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brandDark mb-8 leading-tight">
+                Loading Post Title...
+            </h1>
+
+            <!-- Media Container -->
+            <div id="media-container" class="w-full mb-10 hidden rounded-2xl overflow-hidden shadow-inner bg-gray-100 aspect-video relative">
+                <!-- Media Elements inserted via JS -->
+            </div>
+
+            <!-- Dynamic Body Content -->
+            <div id="post-content" class="text-gray-700 text-lg leading-relaxed space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </article>
+    </main>
+
+     <!-- 7. FOOTER SECTION -->
+    <footer class="bg-brandDark text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <img src="images/logo.png" alt="Lana Cole Realtor" class="h-12 w-auto mb-4">
+                    <p class="text-sm text-gray-400">
+                        Lana Cole
+                        <br>Licenced Real Estate Broker with Charles Rutenberg Realty of Illinois
+                        <br>630-903-4468
+                        <br>3135 Book Rd, Naperville, IL 60564
+                        <br>"Equal Housing Opportunities"
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-brandPurple transition">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-brandPurple transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-brandPurple transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Let's Connect</h3>
+                    <p class="text-sm text-gray-400 mb-6">Ready to discuss your real estate goals? Let's start the conversation today.</p>
+                    <a href="contact.html" class="inline-block bg-gradient-to-r from-brandBlue to-brandPurple text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition">
+                        SCHEDULE CONSULTATION
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Lana Cole Realtor. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Website by <a href="https://csophia.com" target="_blank" class="text-white hover:text-brandPurple transition font-medium underline underline-offset-4">Sophia Cole</a></p>
+
+                <div class="flex space-x-6 text-lg mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/colelanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@colesvetlanarealtor?_r=1&_t=ZT-971NG519yMX" class="hover:text-brandBlue transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@NapervilleRealtorLana" class="hover:text-brandBlue transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/colesvetlanarealtor/" class="hover:text-brandBlue transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/lanacole83611?s=11" class="hover:text-brandBlue transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CLIENT SIDE ROUTING PARSER -->
+    <script>
+        // Utility translation converter mapping for video streaming
+        function getEmbedUrl(urlStr) {
+            if (!urlStr) return '';
+            if (urlStr.includes('youtube.com/shorts/')) {
+                const parts = urlStr.split('youtube.com/shorts/');
+                const id = parts[1].split('?')[0];
+                return `https://www.youtube.com/embed/${id}`;
+            }
+            return urlStr;
+        }
+
+        // Pull direct target parameters context id value (?id=X)
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = parseInt(urlParams.get('id')) || 0; 
+
+        fetch('blog.json')
+            .then(response => response.json())
+            .then(data => {
+                const post = data.posts[postId];
+
+                if (post) {
+                    // Inject metadata items
+                    document.title = `${post.title} | Lana Cole Blog`;
+                    document.getElementById('post-title').innerText = post.title;
+                    document.getElementById('post-date').innerText = post.date;
+                    document.getElementById('post-category').innerText = post.video ? "Video Insight" : "Market Guide";
+                    
+                    // Render inner paragraphs HTML text safely to preserve custom <br> formatting lines
+                    document.getElementById('post-content').innerHTML = post.content;
+
+                    // Media logic evaluation section layout builder
+                    const mediaContainer = document.getElementById('media-container');
+                    if (post.video) {
+                        mediaContainer.classList.remove('hidden');
+                        mediaContainer.innerHTML = `
+                            <iframe class="absolute inset-0 w-full h-full" src="${getEmbedUrl(post.video)}" title="${post.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        `;
+                    } else if (post.photo) {
+                        mediaContainer.classList.remove('hidden');
+                        mediaContainer.innerHTML = `
+                            <img src="${post.photo}" alt="${post.title}" class="absolute inset-0 w-full h-full object-cover">
+                        `;
+                    }
+                } else {
+                    showError();
+                }
+            })
+            .catch(err => {
+                console.error("Error structural fetching content tracking data:", err);
+                showError();
+            });
+
+        function showError() {
+            document.getElementById('post-title').innerText = "Post Not Found";
+            document.getElementById('post-content').innerText = "We're sorry, but the article you're searching for cannot be located.";
+            document.getElementById('post-date').innerText = "";
+        }
+    </script>
+</body>
+</html>
